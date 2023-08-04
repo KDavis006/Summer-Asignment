@@ -28,6 +28,9 @@ body{
 
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
 
+article{
+ min-height: 75vh;
+}
 
 .Pokemon {
  display: flex;
@@ -41,8 +44,7 @@ input[type=radio] {
 }
 
 .card {
- 
- width: 30%;
+ width: 50%;
  height: 50%;
  left: 0;
  right: 0;
@@ -56,7 +58,7 @@ input[type=radio] {
  max-width: 800px;
  max-height: 600px;
  height: 100%;
- transform-style: preserve-3d;
+ // transform-style: preserve-3d;
  display: flex;
  justify-content: center;
  flex-direction: column;
@@ -64,10 +66,18 @@ input[type=radio] {
 }
 
 .cards {
- position: relative;
  width: 100%;
  height: 100%;
  margin-bottom: 20px;
+ margin-left: 20vw;
+}
+
+.card1 {
+ top: 25vh;
+}
+
+.card3 {
+ bottom: 25vh;
 }
 
 img {
@@ -109,9 +119,9 @@ img {
  position: absolute;
  background-color: #fff;
  border-radius: 8px;
- min-width: 320px;
+ max-width: 420px;
  padding: 16px 10px;
- transform: translate(-150%);
+ transform: translate(-100%);
 }
 
 .upper-part {
@@ -128,6 +138,7 @@ img {
 .song-info {
  width: calc(100% - 16px);
  display: block;
+ padding-bottom: 100px;
 }
 
 .song-info .title {
@@ -143,28 +154,95 @@ img {
 }
 
 
-
-
 .info-area {
  width: 100%;
- 
  top: 0;
  left: 30px;
  transition: transform .4s ease-in;
 }
 
-#item-2:checked~.player #test {
- transform: translateY(100px);
+#item-1:checked~.player #test {
+ transform: translateY(220px);
 }
 
 #item-2:checked~.player #test {
- transform: translateY(-40px);
+ transform: translateY(20px);
 }
 
 #item-3:checked~.player #test {
- transform: translateY(-80px);
+ transform: translateY(-160px);
 }
 
 .ms-6{
  margin-left: 25vw;
 }
+
+.scene {
+ width: 100%;
+ display: flex;
+ justify-content: space-evenly;
+ perspective: 800px;
+
+ .videogame-card {
+  border: whitesmoke solid;
+  position: relative;
+  width: 240px;
+  height: 300px;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+
+  &:hover {
+   transform: rotateY(0.5turn);
+  }
+
+  .card__face {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   backface-visibility: hidden;
+   transition: 1s ease-in-out;
+   -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+
+   img {
+    width: 240px;
+    height: 300px;
+    object-fit: cover;
+   }
+
+   &--back {
+    transform: rotateY(0.5turn);
+   }
+  }
+ }
+}
+
+.bounce{
+ animation: bounce-in-right 2s ease;
+ &:hover{
+  animation: bounce-in-right reverse 2s ease;
+ }
+}
+
+@keyframes bounce-in-right {
+ 0% {
+  opacity: 0;
+  transform: translateX(2000px);
+ }
+
+ 60% {
+  opacity: 1;
+  transform: translateX(-30px);
+ }
+
+ 80% {
+  transform: translateX(10px);
+ }
+
+ 100% {
+  transform: translateX(0);
+ }
+}
+
