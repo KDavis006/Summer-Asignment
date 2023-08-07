@@ -31,6 +31,43 @@ article {
   min-height: 75vh;
 }
 
+.scene {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  perspective: 800px;
+}
+.scene .videogame-card {
+  border: whitesmoke solid;
+  position: relative;
+  width: 240px;
+  height: 300px;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+.scene .videogame-card:hover {
+  transform: rotateY(0.5turn);
+}
+.scene .videogame-card .card__face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: 1s ease-in-out;
+  -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+}
+.scene .videogame-card .card__face img {
+  width: 240px;
+  height: 300px;
+  object-fit: cover;
+}
+.scene .videogame-card .card__face--back {
+  transform: rotateY(0.5turn);
+}
+
 .Pokemon {
   display: flex;
   align-items: center;
@@ -148,7 +185,6 @@ img {
 .subtitle {
   font-size: 0.8rem;
   line-height: 16px;
-  color: #c6c5c6;
 }
 
 .info-area {
@@ -159,63 +195,23 @@ img {
 }
 
 #item-1:checked ~ .player #test {
-  transform: translateY(220px);
+  transform: translateY(230px);
 }
 
 #item-2:checked ~ .player #test {
-  transform: translateY(20px);
+  transform: translateY(50px);
 }
 
 #item-3:checked ~ .player #test {
-  transform: translateY(-160px);
+  transform: translateY(-120px);
 }
 
 .ms-6 {
   margin-left: 25vw;
 }
 
-.scene {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  perspective: 800px;
-}
-.scene .videogame-card {
-  border: whitesmoke solid;
-  position: relative;
-  width: 240px;
-  height: 300px;
-  cursor: pointer;
-  transition: 1s ease-in-out;
-  transform-style: preserve-3d;
-}
-.scene .videogame-card:hover {
-  transform: rotateY(0.5turn);
-}
-.scene .videogame-card .card__face {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  transition: 1s ease-in-out;
-  -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
-}
-.scene .videogame-card .card__face img {
-  width: 240px;
-  height: 300px;
-  object-fit: cover;
-}
-.scene .videogame-card .card__face--back {
-  transform: rotateY(0.5turn);
-}
-
 .bounce {
   animation: bounce-in-right 2s ease;
-}
-.bounce:hover {
-  animation: bounce-in-right reverse 2s ease;
 }
 
 @keyframes bounce-in-right {
@@ -231,6 +227,9 @@ img {
     transform: translateX(10px);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(0px);
   }
+}
+.card-title, .card-text {
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }/*# sourceMappingURL=style.css.map */
