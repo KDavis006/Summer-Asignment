@@ -1,31 +1,31 @@
 // basic universal stuff
 
-*{
+* {
  font-family: brush script mt;
 }
 
-body{
+body {
  overflow: hidden;
 }
 
 // basic formatting
-.title{
+.title {
  font-size: 4.5rem;
 }
 
-.subtitle{
+.subtitle {
  font-size: 3rem;
 }
 
-.btn{
+.btn {
  font-size: 1.5rem;
 }
 
-.w-60{
+.w-60 {
  width: 60%;
 }
 
-.h-30{
+.h-30 {
  max-height: 32vh;
 }
 
@@ -33,9 +33,10 @@ body{
 
 @import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
 
-article{
+article {
  min-height: 75vh;
 }
+
 // start of the css for my video games page
 
 
@@ -192,7 +193,6 @@ img {
  overflow: hidden;
 }
 
-
 .song-info {
  width: calc(100% - 16px);
  display: block;
@@ -205,7 +205,7 @@ img {
  line-height: 24px;
 }
 
-.subtitle{
+.subtitle {
  font-size: .8rem;
  line-height: 16px;
 }
@@ -232,12 +232,12 @@ img {
  transform: translateY(-120px);
 }
 
-.ms-6{
+.ms-6 {
  margin-left: 25vw;
 }
 
 // animation for my cards on the deleware page
-.bounce{
+.bounce {
  animation: bounce-in-right 2s ease;
 }
 
@@ -263,6 +263,7 @@ img {
 
 
 // text shadow
-.card-title, .card-text{
+.card-title,
+.card-text {
  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 }
